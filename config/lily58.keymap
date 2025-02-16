@@ -61,7 +61,7 @@
              &kp LCTRL &mt LALT DEL &mt LGUI BSPC  &lt NAV SPACE   &lt NAV SPACE  &mt RGUI BSPC  &mt RALT DEL &kp RCTRL
             >;
 
-            display-name = "qwerty"
+            display-name = "qwerty";
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
@@ -80,7 +80,7 @@
                             &trans  &trans &trans   &trans  &trans  &trans  &trans  &trans
             >;
 
-            display-name = "nav"
+            display-name = "nav";
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
@@ -99,7 +99,7 @@
                             &trans  &trans &trans   &trans  &trans  &trans  &trans  &trans
             >;
 
-            display-name = "os"
+            display-name = "os";
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
