@@ -75,8 +75,8 @@
             bindings = <
 &kp F1    &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                   &kp F7    &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
 &trans      &trans  &trans  &kp UP  &trans &trans                   &trans  &trans  &kp UP  &trans  &kp DQT  &trans
-&trans      &trans HRML(LEFT, DOWN, RIGHT) &trans                   &kp GRAVE  HRMR(LEFT, DOWN, RIGHT, SQT)  &trans
-&trans      &trans  &trans  &trans  &trans &trans   &trans  &trans  &kp TILDE  &kp PIPE &kp BACKSLASH  &trans  &trans  &trans
+&trans      &trans  &hm LALT LEFT  &hm LGUI DOWN  &hm LSHIFT RIGHT  &trans        &kp GRAVE  &kp LEFT  &kp DOWN  &kp RIGHT &kp SEMI  &trans
+&trans      &trans  &trans  &trans  &trans &trans   &trans  &trans  &kp TILDE  &kp PIPE  &kp BACKSLASH  &trans  &trans  &trans
                             &trans  &trans &trans   &trans  &trans  &trans  &trans  &trans
             >;
 
