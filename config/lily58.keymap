@@ -91,10 +91,10 @@
 //                     |      |      |      |        |  |       |      |       |       |
             bindings = <
 &trans      &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP &trans                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans  &trans  &trans  &trans &trans                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans  &trans  &trans  &trans &trans                   &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR_ALL      &trans  &trans  &trans  &trans &trans                   &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_NXT      &trans  &trans  &trans  &trans &trans                   &trans  &trans  &trans  &trans  &trans  &trans
 &bootloader &trans  &trans  &trans  &trans &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &bootloader
-                            &bt BT_NXT  &bt BT_CLR_ALL &trans   &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans
             >;
 
             display-name = "os";
