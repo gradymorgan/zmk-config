@@ -90,7 +90,7 @@
 //                     |      |      |      |        |  |       |      |       |       |
             bindings = <
 &kp GRAVE  &trans  &trans  &trans   &trans  &trans                     &trans  &trans   &trans  &trans  &trans  &kp BSPC
-&trans      &trans  &trans  &kp UP  &trans &trans                   &msc SCRL_UP  &trans  &kp UP  &trans  &kp BSLH  &trans   
+&trans      &trans  &trans  &kp UP  &trans &trans                   &msc SCRL_UP  &trans  &kp UP  &trans  &trans &kp BACKSLASH     
 &trans      HRML(A, LEFT, DOWN, RIGHT)  &trans    &msc SCRL_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT &trans  &trans
 &kp GLOBE      &trans  &trans  &trans  &trans &trans   &trans  &trans  &trans  &kp PIPE  &kp BACKSLASH  &trans  &trans  &trans
                             &trans  &trans &trans   &trans  &trans  &trans  &trans  &trans
