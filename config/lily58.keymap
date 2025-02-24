@@ -13,7 +13,7 @@
 
 #include <dt-bindings/zmk/pointing.h>
 
-#define HRML(k1,k2,k3,k4) &hm LCTRL k1 &hm LALT k2 &hm LGUI k3 &hm LSHIFT k4
+#define HRML(k1,k2,k3,k4) &phm LCTRL k1 &hm LALT k2 &hm LGUI k3 &hm LSHIFT k4
 #define HRMR(k1,k2,k3,k4) &hm RSHFT k1 &hm RGUI k2 &hm RALT k3 &hm RCTRL k4
 
 #define QWERTY 0
@@ -27,6 +27,15 @@
 / {
     behaviors {
         hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        phm: pinky_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
