@@ -99,7 +99,7 @@
 //                     |      |      |      |        |  |       |      |       |       |
             bindings = <
 &kp GRAVE  &trans  &trans  &trans   &trans  &trans                     &trans  &trans   &trans  &trans  &trans  &bspc_del
-&trans      &trans  &kp LBKT  &kp UP  &kp RBKT  &trans                   &msc SCRL_UP  &kp LBKT  &kp UP  &kp RBKT  &trans &kp BACKSLASH     
+&trans      &trans  &kp LS(LG(LBKT))  &kp UP  &kp LS(LG(RBKT))  &trans                   &msc SCRL_UP  &kp LS(LG(LBKT))  &kp UP  &kp LS(LG(RBKT))  &trans &kp BACKSLASH     
 &trans      HRML(A, LEFT, DOWN, RIGHT)  &kp LG(H)                      &msc SCRL_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT &trans  &trans
 &kp GLOBE      &trans  &trans  &trans  &trans &trans   &trans  &trans  &trans  &kp PIPE  &kp BACKSLASH  &trans  &trans  &trans
                             &trans  &trans &trans   &lt NAV RET  &lt NAV RET  &trans  &trans  &trans
