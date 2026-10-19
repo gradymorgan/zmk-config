@@ -13,8 +13,14 @@
 
 #include <dt-bindings/zmk/pointing.h>
 
-#define HRML(k1,k2,k3,k4) &phm LCTRL k1 &hm LALT k2 &hm LGUI k3 &hm LSHIFT k4
-#define HRMR(k1,k2,k3,k4) &hm RSHFT k1 &hm RGUI k2 &hm RALT k3 &hm RCTRL k4
+#define HRML(k1,k2,k3,k4) &phml LCTRL k1 &hml LALT k2 &hml LGUI k3 &hml LSHIFT k4
+#define HRMR(k1,k2,k3,k4) &hmr RSHFT k1 &hmr RGUI k2 &hmr RALT k3 &hmr RCTRL k4
+
+// Lily58 key positions, used so a home-row mod only turns into a mod
+// when the next key is on the other hand (or a thumb key)
+#define KEYS_L 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42
+#define KEYS_R 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 43 44 45 46 47 48 49
+#define THUMBS 50 51 52 53 54 55 56 57
 
 #define QWERTY 0
 #define NAV   1
@@ -26,21 +32,42 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
+        // Left home row (S, D, F)
+        hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
+            flavor = "balanced";
             tapping-term-ms = <250>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            quick-tap-ms = <175>;                // tap then hold = repeat the letter
+            require-prior-idle-ms = <150>;       // typing fast = always a letter
+            hold-trigger-key-positions = <KEYS_R THUMBS>;  // mod only with other hand
+            hold-trigger-on-release;             // allows stacking mods on one hand
             bindings = <&kp>, <&kp>;
         };
 
-        phm: pinky_homerow_mods {
+        // Left pinky (A): a bit more time, pinkies are slower
+        phml: pinky_homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
+            flavor = "balanced";
             tapping-term-ms = <300>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            quick-tap-ms = <175>;                // tap then hold = repeat the letter
+            require-prior-idle-ms = <150>;       // typing fast = always a letter
+            hold-trigger-key-positions = <KEYS_R THUMBS>;  // mod only with other hand
+            hold-trigger-on-release;             // allows stacking mods on one hand
+            bindings = <&kp>, <&kp>;
+        };
+
+        // Right home row (J, K, L, ;)
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;                // tap then hold = repeat the letter
+            require-prior-idle-ms = <150>;       // typing fast = always a letter
+            hold-trigger-key-positions = <KEYS_L THUMBS>;  // mod only with other hand
+            hold-trigger-on-release;             // allows stacking mods on one hand
             bindings = <&kp>, <&kp>;
         };
 
@@ -48,7 +75,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;    // <---[[moderate duration]]
-            quick-tap-ms = <0>;
+            quick-tap-ms = <175>;       // tap then hold = repeat (e.g. backspace)
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
@@ -84,7 +111,7 @@
 &kp TAB      &kp Q  &kp W  &kp E    &kp R    &kp T                          &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
 &kp RET      HRML(A, S, D, F)    &kp G                           &kp H  HRMR(J, K, L, SEMI)  &kp SQT
 &kp LSHFT    &kp Z  &kp X  &kp C    &kp V    &kp B  &lt OS LBKT   &lt OS RBKT &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-             &bhm LCTRL ESC  &bhm LALT DELETE &bhm LGUI BACKSPACE  &lt NAV SPACE   &lt NAV SPACE  &bhm RGUI BACKSPACE  &kp RALT  &kp RCTRL
+             &bhm LCTRL ESC  &bhm LALT DELETE &bhm LGUI BACKSPACE  &lt NAV SPACE   &lt NAV RET    &bhm RGUI BACKSPACE  &kp RALT  &kp RCTRL
             >;
 
             display-name = "qwerty";
